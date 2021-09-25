@@ -1,0 +1,7 @@
+.rank {
+    width: 90%;
+    border-color: teal;
+    border-width: 2px;
+    border-radius: 15px;
+    overflow: hidden
+}
