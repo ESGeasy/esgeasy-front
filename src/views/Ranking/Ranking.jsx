@@ -26,7 +26,6 @@ const Ranking = () => {
     const [chosenSector, setChosenSector] = useState(parsed.sector || "All")
     const [chosenRankType, setChosenRankType] = useState(parsed.rank || "S&P Global ESG Score")
 
-    console.log(chosenSector)
     return (
         <div className={styles.mainContainer}>
             <div className={styles.filtersContainer}>

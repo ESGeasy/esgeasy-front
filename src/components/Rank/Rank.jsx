@@ -45,8 +45,6 @@ const Rank = ({ sector, rankType }) => {
     const bottomScore = response[response.length-1].score
     const normalizedDenominator = (topScore - bottomScore)
 
-    console.log(topScore)
-    console.log(bottomScore)
     return (
         <div className={styles.rank}>
             <div className={css`
