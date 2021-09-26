@@ -1,6 +1,7 @@
 import styles from './Rank.module.css'
 import { css } from '@emotion/css';
 import { getGreenToRed } from '../../utils/color'
+import { Link } from 'react-router-dom'
 
 const response = [
     {
@@ -40,11 +41,12 @@ const response = [
     }
 ]
 
-const Rank = ({ sector, rankType }) => {
+const Rank = ({ sector, rankType, endpoint }) => {
     const topScore = response[0].score
     const bottomScore = response[response.length-1].score
     const normalizedDenominator = (topScore - bottomScore)
 
+    console.log(endpoint)
     return (
         <div className={styles.rank}>
             <div className={css`
@@ -58,12 +60,12 @@ const Rank = ({ sector, rankType }) => {
                 <span>Score - Company</span>
                 <span>Know More</span>
             </div>
-            {response.map(({ name, score, ...rest }) => {
+            {response.map(({ name, score, id, ...rest }) => {
                 let normalizedScore = (score - bottomScore) / normalizedDenominator * 100
                 let color = getGreenToRed(normalizedScore)
 
                 return (
-                    <div className={css`
+                    <Link to={"/company/"+ id} key={id} className={css`
                         background-color: ${color};
                         font-size: 1em;
                         display: flex;
@@ -71,7 +73,9 @@ const Rank = ({ sector, rankType }) => {
                         justify-content: space-between;
                         padding: 20px;
                         cursor: pointer;
-
+                        text-decoration: none;
+                        color: #000;
+                    
                         &:hover {
                             opacity: 0.8;
                         }
@@ -80,7 +84,7 @@ const Rank = ({ sector, rankType }) => {
                         <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
                             <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/>
                         </svg>
-                    </div>
+                    </Link>
                 )
             })}
         </div>
