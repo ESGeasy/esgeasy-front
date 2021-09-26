@@ -8,32 +8,32 @@ import queryString from 'query-string'
 
 const sectorValues = [
     'All',
-    'Oil, Gas and Consumable Fuels',
-    'Metals and Mining',
-    'Road and Rail',
-    'Textiles, Apparel and Luxury Goods'
+    'Óleo, Gás e Combustíveis Consumíveis',
+    'Metais e Mineração',
+    'Rodovias e Ferrovias',
+    'Têxteis, Vestuário e Artigos de Luxo'
 ]
 
 const rankTypeValues = [
-    'S&P Global ESG Score',
-    'Environmental Dimension',
-    'Social Dimension',
-    'Governance & Economic Dimension'
+    'Pontuação ESG Global',
+    'Dimensão Ambiental',
+    'Dimensão Social',
+    'Dimensão de Governança e Econômica'
 ]
 
 const Ranking = ({ future }) => {
     const [rankings, setRankings] = useState([])
     const location = useLocation();
     const parsed = queryString.parse(location.search);
-    let title = "Current Ranking"
-    let buttonText = 'Prediction Ranking'
+    let title = "Ranking Atual"
+    let buttonText = 'Ranking Preditivo'
     let otherLink = '/futureRanking'
     let method = getCurrentRanking
 
     if (future) {
         method = getFutureRanking
-        title = "Prediction Ranking"
-        buttonText = 'Current Ranking'
+        title = "Ranking Preditivo"
+        buttonText = 'Ranking Atual'
         otherLink = '/ranking'
     }
 
@@ -64,11 +64,11 @@ const Ranking = ({ future }) => {
                 </button>
             </Link>
             <div className={styles.filtersContainer}>
-                <Filter name="Sector"
+                <Filter name="Setor"
                     posibleValues={sectorValues}
                     defaultValue={chosenSector}
                     handler={setChosenSector} />
-                <Filter name="Rank"
+                <Filter name="Ranking"
                     posibleValues={rankTypeValues}
                     defaultValue={chosenRankType}
                     handler={setChosenRankType} />

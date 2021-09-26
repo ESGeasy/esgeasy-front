@@ -36,14 +36,14 @@ export default function SignIn() {
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main', marginTop: '20px' }}>
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            Logar
           </Typography>
           <Box component="form" noValidate sx={{ mt: 1, display:'flex', flexDirection: 'column' }}>
             <TextField
               margin="normal"
               required
               id="email"
-              label="Email Address"
+              label="Endereço de Email"
               name="email"
               autoComplete="email"
               autoFocus
@@ -52,14 +52,14 @@ export default function SignIn() {
               margin="normal"
               required
               name="password"
-              label="Password"
+              label="Senha"
               type="password"
               id="password"
               autoComplete="current-password"
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
+              label="Lembrar"
             />
             <Button
               type="submit"
@@ -68,7 +68,7 @@ export default function SignIn() {
               sx={{ mt: 3, mb: 2 }}
               href="/forms"
             >
-              Sign In
+              Logar
             </Button>
           </Box>
         </Box>

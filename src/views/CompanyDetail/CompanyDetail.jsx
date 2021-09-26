@@ -35,11 +35,11 @@ const CompanyDetail = (props) => {
                 Back
             </button>
             <h1>{company.data.company_name} - ${company.data.ticker}</h1>
-            <span>Region: {company.data.region}</span>
-            <span>Country: {company.data.country}</span>
-            <span>Exchange: {company.data.exchange}</span>
-            <h2>ESG Evolution through time</h2>
-            <img src={`data:image/jpeg;base64,${company.image}`} alt='Company ESG evolution through time graph' className={styles.graph} /> 
+            <span>Região: {company.data.region}</span>
+            <span>País: {company.data.country}</span>
+            <span>Câmbio: {company.data.exchange}</span>
+            <h2>Gráfico de evolução do ESG pelo tempo</h2>
+            <img src={`data:image/jpeg;base64,${company.image}`} alt='Gráfico de evolução do ESG pelo tempo' className={styles.graph} /> 
         </div>
     );
 }
