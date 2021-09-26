@@ -52,8 +52,8 @@ const CompanyDetail = (props) => {
             <img src={`data:image/jpeg;base64,${company.image}`} alt='Company ESG evolution through time graph' className={styles.graph} />
             {id === '874225' ?
                 <div>
-                    <h2>Stock Value through time</h2>
-                    <img src="https://cdn.discordapp.com/attachments/749411368926576860/891792999481221141/vale.png"
+                    <h2>Valor da ação no tempo</h2>
+                    <img src="https://cdn.discordapp.com/attachments/749411368926576860/891832709075320924/vale.png"
                     alt='VALE stock value through time graph' className={styles.graph} />
                 </div> : undefined} 
         </div>
