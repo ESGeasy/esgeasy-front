@@ -1,4 +1,4 @@
-import { Ranking, CompanyDetail } from './views'
+import { Ranking, CompanyDetail, Login } from './views'
 import styles from './App.module.css';
 
 import {
@@ -12,8 +12,14 @@ function App() {
     <Router>
         <div className={styles.centralizer}>
             <Switch>
-                <Route path='/ranking' component={Ranking} />
-                <Route path='/company/:id' component={CompanyDetail} />
+                <Route exact path="/" component={Login} />
+                <Route exact path='/futureRanking'>
+                    <Ranking endpoint='futureRanking' />
+                </Route>
+                <Route exact path='/ranking' endpoint='ranking' component={Ranking} >
+                    <Ranking endpoint='ranking' />
+                </Route>
+                <Route exact path='/company/:id' component={CompanyDetail} />
             </Switch>
         </div>
     </Router>
