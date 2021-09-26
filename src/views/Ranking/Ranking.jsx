@@ -7,7 +7,7 @@ import styles from './Ranking.module.css'
 import queryString from 'query-string'
 
 const sectorValues = [
-    'All',
+    'Todos',
     'Óleo, Gás e Combustíveis Consumíveis',
     'Metais e Mineração',
     'Rodovias e Ferrovias',
@@ -37,8 +37,8 @@ const Ranking = ({ future }) => {
         otherLink = '/ranking'
     }
 
-    const [chosenSector, setChosenSector] = useState(parsed.sector || "All")
-    const [chosenRankType, setChosenRankType] = useState(parsed.rank || "S&P Global ESG Score")
+    const [chosenSector, setChosenSector] = useState(parsed.sector || "Todos")
+    const [chosenRankType, setChosenRankType] = useState(parsed.rank || "Pontuação ESG Global")
 
     useEffect(() => {
         setRankings([])
