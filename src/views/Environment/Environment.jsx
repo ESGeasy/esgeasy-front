@@ -16,7 +16,7 @@ export default function Environment({id}) {
             <img src={environment_logo} alt={response.alt} className={styles.logo} />
             <h1>{response.name}</h1>
             <p className={styles.text}> {response.text} </p>     
-            <Link to={'/ranking'} style={{ "textDecoration": "none" }}>
+            <Link to={'/ranking?rank=Environmental%20Dimension'} style={{ "textDecoration": "none" }}>
                 <button className={styles.myButton} >
                     {"Recomendações de investimentos"}
                 </button>
