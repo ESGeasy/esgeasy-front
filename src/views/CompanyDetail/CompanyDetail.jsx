@@ -23,7 +23,7 @@ const CompanyDetail = (props) => {
         return(
             <div className={styles.mainContainer}>
                 <button onClick={history.goBack} className={styles.myButton}>
-                    Back
+                    Voltar
                 </button>
                 <CircularProgress size={100} />
             </div>);
@@ -32,7 +32,7 @@ const CompanyDetail = (props) => {
     return (
         <div className={styles.mainContainer}>
             <button onClick={history.goBack} className={styles.myButton}>
-                Back
+                Voltar
             </button>
             <h1>{company.data.company_name} - ${company.data.ticker}</h1>
             {id === '874225' ?
