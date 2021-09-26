@@ -14,7 +14,7 @@ export default function Forms() {
     return (
         <div className={styles.mainContainer}>
             <BuzzFeedQuiz
-            title={"Diga o que te move!"}
+            title={"Descubra o que te move!"}
             autoScroll={true}
             questions={[
                 {
