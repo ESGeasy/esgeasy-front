@@ -73,7 +73,7 @@ const Ranking = ({ future }) => {
                     defaultValue={chosenRankType}
                     handler={setChosenRankType} />
             </div>
-            { rankings.length===0 ? <CircularProgress /> : 
+            {Object.keys(rankings).length === 0 ? <CircularProgress /> :
                 <Rank companies={rankings} />
             }
         </div>
