@@ -1,4 +1,4 @@
-import { Ranking, CompanyDetail, Login } from './views'
+import { Ranking, CompanyDetail, Login, Forms } from './views'
 import styles from './App.module.css';
 
 import {
@@ -14,12 +14,13 @@ function App() {
             <Switch>
                 <Route exact path="/" component={Login} />
                 <Route exact path='/futureRanking'>
-                    <Ranking endpoint='futureRanking' />
+                    <Ranking future={true} />
                 </Route>
-                <Route exact path='/ranking' endpoint='ranking' component={Ranking} >
-                    <Ranking endpoint='ranking' />
+                <Route exact path='/ranking' component={Ranking} >
+                    <Ranking future={false} />
                 </Route>
                 <Route exact path='/company/:id' component={CompanyDetail} />
+                <Route exact path='/forms' component={Forms} />
             </Switch>
         </div>
     </Router>
