@@ -2,5 +2,6 @@
   width: 100vw;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  min-height: 100vh;
 }
