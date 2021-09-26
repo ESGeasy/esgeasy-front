@@ -1,4 +1,5 @@
 import styles from './Rank.module.css'
+import { css } from '@emotion/css';
 import { getGreenToRed } from '../../utils/color'
 
 const response = [
@@ -48,22 +49,40 @@ const Rank = ({ sector, rankType }) => {
     console.log(bottomScore)
     return (
         <div className={styles.rank}>
-            {response.map(({ position, name, score, ...rest }) => {
+            <div className={css`
+                background-color: #EDEDED;
+                font-size: 1em;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 20px;
+            `}>
+                <span>Score - Company</span>
+                <span>Know More</span>
+            </div>
+            {response.map(({ name, score, ...rest }) => {
                 let normalizedScore = (score - bottomScore) / normalizedDenominator * 100
-                console.log(normalizedScore)
                 let color = getGreenToRed(normalizedScore)
-                console.log(color)
+
                 return (
-                    <div style={{
-                        "backgroundColor": color,
-                        "fontSize": "1em",
-                        "display": "flex",
-                        "alignItems": "center",
-                        "justifyContent": "space-between",
-                        "padding": "20px" 
-                        }}>
-                        <span>{position+" - "+name}</span>
-                        <span>{score}</span>
+                    <div className={css`
+                        background-color: ${color};
+                        font-size: 1em;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 20px;
+                        cursor: pointer;
+
+                        &:hover {
+                            opacity: 0.8;
+                        }
+                    `}>
+                        <span>{score+' - '+name}</span>
+                        {/* <span>{score}</span> */}
+                        <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                            <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/>
+                        </svg>
                     </div>
                 )
             })}
