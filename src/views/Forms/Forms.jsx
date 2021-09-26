@@ -8,7 +8,7 @@ export default function Forms() {
     const [redirect, setRedirect] = useState(false);
 
     if (redirect) {
-        return <Redirect to="/" />;
+        return <Redirect to="/environment" />;
     }
 
     return (

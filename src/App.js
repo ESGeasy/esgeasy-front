@@ -1,4 +1,4 @@
-import { Ranking, CompanyDetail, Login, Forms } from './views'
+import { Ranking, CompanyDetail, Login, Forms, Environment } from './views'
 import styles from './App.module.css';
 
 import {
@@ -21,6 +21,7 @@ function App() {
                 </Route>
                 <Route exact path='/company/:id' component={CompanyDetail} />
                 <Route exact path='/forms' component={Forms} />
+                <Route exact path='/environment' component={Environment} />
             </Switch>
         </div>
     </Router>
