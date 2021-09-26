@@ -48,7 +48,7 @@ export default function SignIn() {
                 margin="normal"
                 required
                 id="email"
-                label="Email Address"
+                label="Endereço de Email"
                 name="email"
                 autoComplete="email"
                 autoFocus
@@ -57,14 +57,14 @@ export default function SignIn() {
                 margin="normal"
                 required
                 name="password"
-                label="Password"
+                label="Senha"
                 type="password"
                 id="password"
                 autoComplete="current-password"
               />
               <FormControlLabel
+                label="Lembrar"
                 control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
               />
               <Button
                 type="submit"

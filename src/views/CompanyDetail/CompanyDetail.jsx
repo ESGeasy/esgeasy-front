@@ -45,10 +45,10 @@ const CompanyDetail = (props) => {
                     </span>
                 </span>
             : undefined }
-            <span>Region: {company.data.region}</span>
-            <span>Country: {company.data.country}</span>
-            <span>Exchange: {company.data.exchange}</span>
-            <h2>ESG Evolution through time</h2>
+            <span>Região: {company.data.region}</span>
+            <span>País: {company.data.country}</span>
+            <span>Câmbio: {company.data.exchange}</span>
+            <h2>Gráfico de Evolução do ESG pelo tempo</h2>
             <img src={`data:image/jpeg;base64,${company.image}`} alt='Company ESG evolution through time graph' className={styles.graph} />
             {id === '874225' ?
                 <div>
