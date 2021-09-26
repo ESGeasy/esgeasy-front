@@ -30,3 +30,8 @@
     border: none;
     width: 220px;
 }
+
+.text {
+    text-align: center;
+    padding: 15px;
+}
