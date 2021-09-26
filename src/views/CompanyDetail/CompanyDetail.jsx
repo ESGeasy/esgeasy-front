@@ -2,10 +2,11 @@ import styles from './CompanyDetail.module.css';
 import { useState, useEffect } from 'react';
 import { CircularProgress } from '@mui/material';
 import { getCompany } from '../../utils/api';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const CompanyDetail = (props) => {
     const id = props.match.params.id;
+    let history = useHistory();
     const [loading, setLoading] = useState(true);
     const [company, setCompany] = useState({});
 
@@ -21,22 +22,18 @@ const CompanyDetail = (props) => {
     if (loading) {
         return(
             <div className={styles.mainContainer}>
-                <Link to={'/ranking'} style={{ "textDecoration": "none" }}>
-                    <button className={styles.myButton}>
-                        Back
-                    </button>
-                </Link>
+                <button onClick={history.goBack} className={styles.myButton}>
+                    Back
+                </button>
                 <CircularProgress size={100} />
             </div>);
     }
 
     return (
         <div className={styles.mainContainer}>
-            <Link to={'/ranking'} style={{ "textDecoration": "none" }}>
-                <button className={styles.myButton}>
-                    Back
-                </button>
-            </Link>
+            <button onClick={history.goBack} className={styles.myButton}>
+                Back
+            </button>
             <h1>{company.data.company_name} - ${company.data.ticker}</h1>
             <span>Region: {company.data.region}</span>
             <span>Country: {company.data.country}</span>
