@@ -17,8 +17,8 @@ const Rank = ({ companies }) => {
                 justify-content: space-between;
                 padding: 20px;
             `}>
-                <span>Score - Company</span>
-                <span>Know More</span>
+                <span>Pontuação - Empresa</span>
+                <span>Saiba Mais</span>
             </div>
             {Object.keys(companies).map((id) => {
                 let company = companies[id]
