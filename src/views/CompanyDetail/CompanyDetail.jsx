@@ -36,7 +36,7 @@ const CompanyDetail = (props) => {
             </button>
             <h1>{company.data.company_name} - ${company.data.ticker}</h1>
             {id === '874225' ?
-                <span>{"Current Stock Value: "}
+                <span>{"Valor atual: "}
                     <span style={{"fontWeight": "bold", "color": "#00C000"}}>
                         <img src={"https://cdn.discordapp.com/attachments/749411368926576860/891795422178332762/2048px-Green_Arrow_Up.png"}
                              className={styles.arrowUp}
