@@ -26,7 +26,7 @@ const Ranking = ({ future }) => {
     const location = useLocation();
     const parsed = queryString.parse(location.search);
     let title = "Current Ranking"
-    let buttonText = 'Prediction Ranking' 
+    let buttonText = 'Prediction Ranking'
     let otherLink = '/futureRanking'
     let method = getCurrentRanking
 
@@ -36,19 +36,19 @@ const Ranking = ({ future }) => {
         buttonText = 'Current Ranking'
         otherLink = '/ranking'
     }
-    
+
     const [chosenSector, setChosenSector] = useState(parsed.sector || "All")
     const [chosenRankType, setChosenRankType] = useState(parsed.rank || "S&P Global ESG Score")
 
     useEffect(() => {
         setRankings([])
-        method(chosenSector, chosenRankType).then((response) =>{
-            setRankings(response.data)       
-        }).catch(()=>{
+        method(chosenSector, chosenRankType).then((response) => {
+            setRankings(response.data)
+        }).catch(() => {
             setRankings([])
         })
-        }, [method, chosenSector, chosenRankType])
-    
+    }, [method, chosenSector, chosenRankType])
+
 
     return (
         <div className={styles.mainContainer}>
@@ -59,19 +59,19 @@ const Ranking = ({ future }) => {
                 <button className={styles.myButton}>
                     {buttonText}
                     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
-                        <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/>
+                        <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
                     </svg>
                 </button>
             </Link>
             <div className={styles.filtersContainer}>
                 <Filter name="Sector"
-                        posibleValues={sectorValues}
-                        defaultValue={chosenSector}
-                        handler={setChosenSector} />
+                    posibleValues={sectorValues}
+                    defaultValue={chosenSector}
+                    handler={setChosenSector} />
                 <Filter name="Rank"
-                        posibleValues={rankTypeValues}
-                        defaultValue={chosenRankType}
-                        handler={setChosenRankType} />
+                    posibleValues={rankTypeValues}
+                    defaultValue={chosenRankType}
+                    handler={setChosenRankType} />
             </div>
             { rankings.length===0 ? <CircularProgress /> : 
                 <Rank companies={rankings} />
