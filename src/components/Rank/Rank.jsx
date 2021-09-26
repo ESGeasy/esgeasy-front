@@ -4,10 +4,9 @@ import { getGreenToRed } from '../../utils/color'
 import { Link } from 'react-router-dom'
 
 const Rank = ({ companies }) => {
-    const topScore = companies[0].score
-    const bottomScore = companies[Object.keys(companies).length - 1].score
+    const topScore = companies[Object.keys(companies)[0]].score
+    const bottomScore = companies[Math.max.apply(Math, Object.keys(companies)) - 1].score
     const normalizedDenominator = (topScore - bottomScore)
-
     return (
         <div className={styles.rank}>
             <div className={css`
