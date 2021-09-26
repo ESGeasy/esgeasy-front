@@ -35,3 +35,7 @@
 .myButton:hover {
     opacity: 0.8;
 }
+
+.arrowUp {
+    height: 13px;
+}
