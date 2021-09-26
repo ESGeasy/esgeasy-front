@@ -66,7 +66,7 @@ export default function SignIn() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-              href="/landing"
+              href="/forms"
             >
               Sign In
             </Button>
