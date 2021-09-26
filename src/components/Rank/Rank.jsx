@@ -4,37 +4,37 @@ import { getGreenToRed } from '../../utils/color'
 
 const response = [
     {
-        position: 1,
+        id: 1,
         name: "Wieland Enterprises",
         score: 100
     },
     {
-        position: 2,
+        id: 2,
         name: "Wieland Enterprises 2",
         score: 92
     },
     {
-        position: 3,
+        id: 3,
         name: "Bdantas Enterprises 2",
         score: 84
     },
     {
-        position: 4,
+        id: 4,
         name: "Xisreiber Enterprises aa",
         score: 70
     },
     {
-        position: 5,
+        id: 5,
         name: "Xisreiber Enterprise bbs",
         score: 55
     },
     {
-        position: 6,
+        id: 6,
         name: "Guima Enterprises",
         score: 50
     },
     {
-        position: 7,
+        id: 7,
         name: "Xisreiber Enterprises thw ros",
         score: 30
     }
@@ -79,7 +79,6 @@ const Rank = ({ sector, rankType }) => {
                         }
                     `}>
                         <span>{score+' - '+name}</span>
-                        {/* <span>{score}</span> */}
                         <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
                             <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/>
                         </svg>
