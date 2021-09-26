@@ -27,7 +27,7 @@ const Rank = ({ companies }) => {
                 let color = getGreenToRed(normalizedScore)
 
                 return (
-                    <Link to={"/company/" + company.id} key={company.id} className={css`
+                    <Link to={"/company/" + company.company_id} key={company.company_id} className={css`
                         background-color: ${color};
                         font-size: 1em;
                         display: flex;
