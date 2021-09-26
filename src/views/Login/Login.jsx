@@ -48,6 +48,7 @@ export default function SignIn() {
                 margin="normal"
                 required
                 id="email"
+                label="Endereço de Email"
                 name="email"
                 autoComplete="email"
                 autoFocus
@@ -56,11 +57,13 @@ export default function SignIn() {
                 margin="normal"
                 required
                 name="password"
+                label="Senha"
                 type="password"
                 id="password"
                 autoComplete="current-password"
               />
               <FormControlLabel
+                label="Lembrar"
                 control={<Checkbox value="remember" color="primary" />}
               />
               <Button
@@ -73,9 +76,6 @@ export default function SignIn() {
                 Sign In
               </Button>
             </Box>
-              label="Senha"
-              label="Lembrar"
-              label="Endereço de Email"
           </Box>
         </Container>
       </ThemeProvider>
