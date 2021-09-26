@@ -19,7 +19,7 @@ const rankTypeValues = [
     'Governance & Economic Dimension'
 ]
 
-const Ranking = () => {
+const Ranking = ({ endpoint }) => {
     const location = useLocation();
     const parsed = queryString.parse(location.search);
     
@@ -38,7 +38,7 @@ const Ranking = () => {
                         defaultValue={chosenRankType}
                         handler={setChosenRankType} />
             </div>
-            <Rank sector={chosenSector} rankType={chosenRankType} />
+            <Rank sector={chosenSector} rankType={chosenRankType} endpoint={endpoint} />
         </div>
     )
 }
