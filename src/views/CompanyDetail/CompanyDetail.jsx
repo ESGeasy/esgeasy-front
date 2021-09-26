@@ -1,4 +1,4 @@
-const CompanyDetail = () => {
+const CompanyDetail = ({ id }) => {
     return (
         <div>
         <h1>Company</h1>
