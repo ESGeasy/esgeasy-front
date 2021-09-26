@@ -3,50 +3,11 @@ import { css } from '@emotion/css';
 import { getGreenToRed } from '../../utils/color'
 import { Link } from 'react-router-dom'
 
-const response = [
-    {
-        id: 1,
-        name: "Wieland Enterprises",
-        score: 100
-    },
-    {
-        id: 2,
-        name: "Wieland Enterprises 2",
-        score: 92
-    },
-    {
-        id: 3,
-        name: "Bdantas Enterprises 2",
-        score: 84
-    },
-    {
-        id: 4,
-        name: "Xisreiber Enterprises aa",
-        score: 70
-    },
-    {
-        id: 5,
-        name: "Xisreiber Enterprise bbs",
-        score: 55
-    },
-    {
-        id: 6,
-        name: "Guima Enterprises",
-        score: 50
-    },
-    {
-        id: 7,
-        name: "Xisreiber Enterprises thw ros",
-        score: 30
-    }
-]
-
-const Rank = ({ sector, rankType, endpoint }) => {
-    const topScore = response[0].score
-    const bottomScore = response[response.length-1].score
+const Rank = ({ companies }) => {
+    const topScore = companies[0].score
+    const bottomScore = companies[companies.length-1].score
     const normalizedDenominator = (topScore - bottomScore)
 
-    console.log(endpoint)
     return (
         <div className={styles.rank}>
             <div className={css`
@@ -60,7 +21,7 @@ const Rank = ({ sector, rankType, endpoint }) => {
                 <span>Score - Company</span>
                 <span>Know More</span>
             </div>
-            {response.map(({ name, score, id, ...rest }) => {
+            {companies.map(({ name, score, id, ...rest }) => {
                 let normalizedScore = (score - bottomScore) / normalizedDenominator * 100
                 let color = getGreenToRed(normalizedScore)
 
@@ -80,7 +41,7 @@ const Rank = ({ sector, rankType, endpoint }) => {
                             opacity: 0.8;
                         }
                     `}>
-                        <span>{score+' - '+name}</span>
+                        <span>{Math.floor(score)+' - '+name}</span>
                         <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
                             <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/>
                         </svg>

@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { Select, MenuItem, InputLabel } from '@mui/material';
 
-const Filter = ({ name, posibleValues, defaultValue }) => {
+const Filter = ({ name, posibleValues, defaultValue, handler }) => {
     const [filterValue, setFilterValue] = useState(defaultValue); 
     
     const handleFilter = (event) => {
+        handler(event.target.value);
         setFilterValue(event.target.value);
     };
 
